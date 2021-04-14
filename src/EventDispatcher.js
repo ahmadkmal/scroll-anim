@@ -94,7 +94,8 @@ EventDispatcher.prototype = {
         listener = list[i];
         if (listener) {
           const _e = e || { type, target: t };
-          listener.c.call(t, _e);
+          if(listener.c)
+          {listener.c.call(t, _e);}
         }
       }
     }
